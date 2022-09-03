@@ -1,0 +1,234 @@
+* {
+	box-sizing: border-box;
+}
+body {
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin:0;
+}
+.game-container {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	padding-top: 20px;
+}
+.splash-screen {
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #2196f38a;
+	z-index: 10;
+}
+.splash-screen button {
+	position: relative;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	border: none;
+	background-color: #ff9800;
+	color: white;
+	padding: 10px 45px;
+	border-radius: 5px 14px 2px 14px;
+	cursor: pointer;
+	font-size: 25px;
+	font-weight: bold;
+}
+
+.lose-screen,
+.win-screen {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	background-color: #ff0000e3;
+	z-index: 10;
+	display: none;
+}
+.lose-screen .score,
+.win-screen .score {
+	position: absolute;
+	top: calc(50% - 77px);
+	width: 100%;
+	color: white;
+	font-size: 25px;
+	background-color: transparent;
+	text-align: center;
+}
+.lose-screen button,
+.win-screen button {
+	position: relative;
+	border: none;
+	background-color: #ff9800;
+	color: white;
+	padding: 10px 45px;
+	border-radius: 5px 14px 2px 14px;
+	cursor: pointer;
+	font-size: 30px;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+    font-weight: bold;
+}
+button:hover {
+	background-color: #ff9d0cde;
+}
+.win-screen {
+	background-color: #218cf3cf;
+	z-index: 10;
+}
+.game-container .player-info {
+	width: 100%;
+	margin: 0 auto 0;
+	display: flex;
+	border: 3px solid #03a9f4;
+	padding: 15px;
+	justify-content: space-between;
+	border-radius: 5px;
+}
+@media (max-width: 500px) {
+	.game-container {
+		padding-top: 0;
+	}
+	.game-container .player-info {
+		flex-direction: column;
+		padding: 0;
+		border: none;
+	}
+	.game-container .player-info div {
+		text-align: center;
+		background-color: #03a9f4;
+		padding: 10px 0;
+		color: white;
+		font-size: 18px;
+		border-bottom: 2px solid #4ec8ff;
+	}
+}
+.game-container .cards-box {
+	width: 100%;
+	margin: 20px auto;
+	display: flex;
+	flex-wrap: wrap;
+}
+.game-container .cards-box.no-clicking {
+	pointer-events: none;
+}
+.game-container .cards-box .card {
+	flex: 1 0;
+	min-width: 200px;
+	height: 200px;
+	position: relative;
+	margin: 0 10px 20px;
+	cursor: pointer;
+	transform-style: preserve-3d;
+	transition: transform 0.3s;
+}
+@media (max-width: 500px) {
+	.game-container .cards-box {
+		margin: 2px auto;
+	}
+	.game-container .cards-box .card {
+		flex: 1 0;
+		min-width: 80px;
+		height: 130px;
+		margin: 2px;
+	}
+}
+@media (min-width: 500px) and (max-width: 880px) {
+	.game-container .cards-box {
+		margin: 12px auto 8px auto;
+	}
+	.game-container .cards-box .card {
+		flex: 1 0;
+		min-width: 140px;
+		height: 200px;
+		margin: 5px 5px 5px 5px;
+	}
+}
+.game-container .cards-box .card.matched,
+.game-container .cards-box .card.flipped,
+.game-container .cards-box .card.pre-start {
+	transform: rotateY(180deg);
+}
+.game-container .cards-box .face {
+	background-color: #484848;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	border: 5px solid #03a9f4;
+	backface-visibility: hidden;
+}
+.game-container .cards-box .front::before {
+	content: "?";
+	font-weight: bold;
+	font-size: 145px;
+	color: white;
+	line-height: 200px;
+}
+@media (max-width: 500px) {
+	.game-container .cards-box .front::before {
+		font-size: 100px;
+		line-height: 130px;
+	}
+}
+.game-container .cards-box .back {
+	transform: rotateY(180deg);
+	background-color: transparent;
+}
+.game-container .cards-box .back img {
+	width: 96%;
+	height: 96%;
+	margin: 2%;
+}
+@media (max-width: 500px) {
+	.game-container .cards-box .back {
+		padding-top: 10px;
+		text-align: center;
+	}
+	.game-container .cards-box .back img {
+		width: calc(100% - 10px);
+		height: calc(100% - 10px);
+	}
+}
+.highest-score {
+	text-align: center;
+	padding: 20px;
+	color: white;
+	background-color: #03a9f4;
+	font-size: 20px;
+}
+.highest-score h2 {
+	padding: 0;
+	margin-top: 0;
+}
+.highest-score .name,
+.highest-score .score {
+	background-color: #ff9d0c;
+	padding: 4px 10px;
+	border-radius: 6px;
+	box-shadow: 0 0 7px 1px #737373;
+	margin-right: 10px;
+}
+@media (max-width: 518px) {
+	.highest-score {
+		padding: 20px 0px;
+		font-size: 16px;
+	}
+	.highest-score .name {
+		display: block;
+		width: fit-content;
+		margin: 5px auto 12px;
+	}
+}
+@media (max-width: 290px) {
+	.highest-score {
+		text-align: left;
+		padding: 0 20px 10px 10px;
+	}
+	.highest-score h2 {
+		text-align: center;
+		padding-top: 15px;
+	}
+}

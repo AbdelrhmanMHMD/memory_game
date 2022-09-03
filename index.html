@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Memory game</title>
+</head>
+
+<body>
+    <div class="splash-screen">
+        <button>Start game</button>
+    </div>
+    <div class="lose-screen">
+        <div class="score">Score: <span></span></div>
+        <button>Play again!</button>
+    </div>
+    <div class="win-screen">
+        <div class="score">Congratulation you discoverd all cards</div>
+        <button>Play again!</button>
+    </div>
+    <div class="game-container">
+        <div class="player-info">
+            <div class="name">Hello! <span></span></div>
+            <div class="wrong-tries">Allowed tries: <span>10</span></div>
+            <div class="timer"><span class="minute">00</span> : <span class="second">60</span></div>
+        </div>
+        <div class="cards-box">
+            <div class="card" data-image="angular">
+                <div class="face front"></div>
+                <div class="face back">
+                    <img src="images/angular.png">
+                </div>
+            </div>
+            <div class="card" data-image="angular">
+                <div class="face front"></div>
+                <div class="face back">
+                    <img src="images/angular.png">
+                </div>
+            </div>
+            <div class="card" data-image="css">
+                <div class="face front"></div>
+                <div class="face back">
+                    <img src="images/css.png">
+                </div>
+            </div>
+            <div class="card" data-image="css">
+                <div class="face front"></div>
+                <div class="face back">
+                    <img src="images/css.png">
+                </div>
+            </div>
+            <div class="card" data-image="github">
+                <div class="face front"></div>
+                <div class="face back">
+                    <img src="images/github.png">
+                </div>
+            </div>
+            <div class="card" data-image="github">
+                <div class="face front"></div>
+                <div class="face back">
+                    <img src="images/github.png">
+                </div>
+            </div>
+            <div class="card" data-image="gulpjs">
+                <div class="face front"></div>
+                <div class="face back">
+                    <img src="images/gulpjs.png">
+                </div>
+            </div>
+            <div class="card" data-image="gulpjs">
+                <div class="face front"></div>
+                <div class="face back">
+                    <img src="images/gulpjs.png">
+                </div>
+            </div>
+            <div class="card" data-image="html">
+                <div class="face front"></div>
+                <div class="face back">
+                    <img src="images/html.png">
+                </div>
+            </div>
+            <div class="card" data-image="html">
+                <div class="face front"></div>
+                <div class="face back">
+                    <img src="images/html.png">
+                </div>
+            </div>
+            <div class="card" data-image="jest">
+                <div class="face front"></div>
+                <div class="face back">
+                    <img src="images/jest.png">
+                </div>
+            </div>
+            <div class="card" data-image="jest">
+                <div class="face front"></div>
+                <div class="face back">
+                    <img src="images/jest.png">
+                </div>
+            </div>
+            <div class="card" data-image="mongodb">
+                <div class="face front"></div>
+                <div class="face back">
+                    <img src="images/mongodb.png">
+                </div>
+            </div>
+            <div class="card" data-image="mongodb">
+                <div class="face front"></div>
+                <div class="face back">
+                    <img src="images/mongodb.png">
+                </div>
+            </div>
+            <div class="card" data-image="python">
+                <div class="face front"></div>
+                <div class="face back">
+                    <img src="images/python.jpg">
+                </div>
+            </div>
+            <div class="card" data-image="python">
+                <div class="face front"></div>
+                <div class="face back">
+                    <img src="images/python.jpg">
+                </div>
+            </div>
+            <div class="card" data-image="reactjs">
+                <div class="face front"></div>
+                <div class="face back">
+                    <img src="images/reactjs.png">
+                </div>
+            </div>
+            <div class="card" data-image="reactjs">
+                <div class="face front"></div>
+                <div class="face back">
+                    <img src="images/reactjs.png">
+                </div>
+            </div>
+            <div class="card" data-image="vuejs">
+                <div class="face front"></div>
+                <div class="face back">
+                    <img src="images/vuejs.png">
+                </div>
+            </div>
+            <div class="card" data-image="vuejs">
+                <div class="face front"></div>
+                <div class="face back">
+                    <img src="images/vuejs.png">
+                </div>
+            </div>
+        </div>
+        <div class="highest-score">
+            <h2>Last win score</h2>
+            Name: <span class="name"></span>Score: <span class="score"></span>
+        </div>
+    </div>
+
+    <audio id='fail' src="sounds/fail.mp3" preload="auto"></audio>
+    <audio id='success' src="sounds/success.wav" preload="auto"></audio>
+    <audio id='lose' src="sounds/loseGame.mp3" preload="auto"></audio>
+    <audio id='winning' src="sounds/winning.mp3" preload="auto"></audio>
+    <script src="js/js.js"></script>
+</body>
+
+</html>
