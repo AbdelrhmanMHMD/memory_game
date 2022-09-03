@@ -3,7 +3,7 @@
 }
 body {
 	font-family: Verdana, Geneva, Tahoma, sans-serif;
-    margin:0;
+	margin: 0;
 }
 .game-container {
 	position: relative;
@@ -19,6 +19,7 @@ body {
 	height: 100%;
 	background-color: #2196f38a;
 	z-index: 10;
+	display: block;
 }
 .splash-screen button {
 	position: relative;
@@ -49,7 +50,7 @@ body {
 .lose-screen .score,
 .win-screen .score {
 	position: absolute;
-	top: calc(50% - 77px);
+	top: calc(50% - 97px);
 	width: 100%;
 	color: white;
 	font-size: 25px;
@@ -69,7 +70,7 @@ body {
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-    font-weight: bold;
+	font-weight: bold;
 }
 button:hover {
 	background-color: #ff9d0cde;
@@ -208,7 +209,7 @@ button:hover {
 	background-color: #ff9d0c;
 	padding: 4px 10px;
 	border-radius: 6px;
-	box-shadow: 0 0 7px 1px #737373;
+	box-shadow: 0 0 5px 0px #737373;
 	margin-right: 10px;
 }
 @media (max-width: 518px) {
@@ -217,9 +218,13 @@ button:hover {
 		font-size: 16px;
 	}
 	.highest-score .name {
-		display: block;
+		display: inline-block;
 		width: fit-content;
-		margin: 5px auto 12px;
+	}
+	.highest-score .content {
+		width: 90%;
+		margin-right: auto;
+		margin-left: auto;
 	}
 }
 @media (max-width: 290px) {
